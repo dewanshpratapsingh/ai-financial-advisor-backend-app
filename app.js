@@ -8,7 +8,7 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 const corsOptions = {
-    origin: 'https://your-frontend.vercel.app',
+    origin: 'https://financial-assist-git-development-dewanshpratapsinghs-projects.vercel.app/',
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     credentials: true,
 };
