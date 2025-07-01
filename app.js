@@ -10,7 +10,7 @@ app.use(express.urlencoded({extended:true}));
 
 /** To Allow some clients to access this app resources */
 app.use(cors({
-    origin : ['http://localhost:3000', 'https://myfrontend.com']
+    origin : ['http://localhost:3000', 'https://financial-assist-git-development-dewanshpratapsinghs-projects.vercel.app']
 }));
 
 /** Routes */
