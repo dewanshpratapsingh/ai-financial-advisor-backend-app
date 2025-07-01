@@ -4,7 +4,7 @@ import geminiClient from "./../clients/gemini.js";
 
 class AdvisorService{
     async generateFinancialAdvice(salary, age, investment, location, risk,emi){
-        console.log("Service:generateFinancialAdvice");
+
         try{
             const adviceData = await geminiClient(salary, age, investment, location, risk,emi);
             const response ={

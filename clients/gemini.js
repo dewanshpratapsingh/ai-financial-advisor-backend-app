@@ -28,12 +28,12 @@ async function geminiClient(salary, age, investment, location, risk,emi) {
     config,
     contents,
   });
-  console.log("Got response from Gemini AI");
+
   let fullResponse = '';
   for await (const chunk of response) {
     fullResponse += chunk.text;
   }
-  console.log("Full response received from Gemini AI");
+
   const startPattern = "```json";
   const endPattern = "```";
   if (fullResponse.startsWith(startPattern) && fullResponse.endsWith(endPattern)) {
