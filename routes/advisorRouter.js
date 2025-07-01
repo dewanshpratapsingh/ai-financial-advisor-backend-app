@@ -1,5 +1,5 @@
 import { Router } from "express";
-import advisorService from "./../service/advisor.service.js";
+import advisorController from "./../controller/advisor.controller.js";
 const router = Router();
 
 router.get('/',async (req,res)=>{
@@ -10,9 +10,10 @@ router.get('/',async (req,res)=>{
         const investment = req.query.investment;
         const location = req.query.location;
         const emi = req.query.emi;
-        const response = await advisorService.generateFinancialAdvice(salary, age, investment, location, risk,emi);
+        const response = await advisorController.generateFinancialAdvice(salary, age, investment, location, risk,emi);
         res.json(response);
-    } catch (err) {
+    } catch (err) {    
+        console.error("Error in advisorRouter:", err);    
         res.status(500).json({
             status: "Failure",
             message: "Internal Server Error",

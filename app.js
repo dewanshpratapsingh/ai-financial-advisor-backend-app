@@ -7,11 +7,13 @@ const app = express();
 /**To parser JSON and FORM data in request body */
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
-
+const corsOptions = {
+    origin: 'https://financial-assist-git-development-dewanshpratapsinghs-projects.vercel.app/',
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    credentials: true,
+};
 /** To Allow some clients to access this app resources */
-app.use(cors({
-    origin : ['http://localhost:3000', 'https://myfrontend.com']
-}));
+app.use(cors(corsOptions));
 
 /** Routes */
 app.use('/api',mainRouter)

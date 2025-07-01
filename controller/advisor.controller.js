@@ -1,22 +1,12 @@
-
-class Advisor{
-    async generateFinancialAdvice(requestBody){
+import advisorService from '../service/advisor.service.js';
+class AdvisorController{
+    async generateFinancialAdvice(salary, age, investment, location, risk,emi){
         console.log("controller:generateFinancialAdvice");
-        
-        if(!requestBody){
-            throw new Error("Request Body is not defined.");
+        if (!salary || !age || !investment || !location || !risk || !emi) {
+            throw new Error("Missing required parameters: salary, age, investment, location, risk, or emi");
         }
-        if(!requestBody.salary){
-            throw new Error("Request Body is not defined.");
-        }
-        if(!requestBody.risk){
-            throw new Error("Request Body is not defined.");
-        }
-        if(!requestBody.liabilities){
-            throw new Error("Request Body is not defined.");
-        }
-        return advisorService.generateFinancialAdvice();
+        return advisorService.generateFinancialAdvice(salary, age, investment, location, risk,emi);
     }
 }
 
-module.exports = new Advisor();
+export default new AdvisorController();
