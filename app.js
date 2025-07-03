@@ -9,8 +9,7 @@ app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 const corsOptions = {
     origin: 'https://financial-assist.vercel.app/',
-    methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    credentials: true,
+    methods: ['GET', 'POST', 'PUT', 'DELETE']
 };
 /** To Allow some clients to access this app resources */
 app.use(cors(corsOptions));
